@@ -1,0 +1,148 @@
+Server Creation
+----------------
+
+-1- create package.json file   - npm init
+-2- install express framework  - npm i express
+
+server side technology - node (node resolves multiple requests at a time)
+
+api
+----
+http request
+
+header        body
+secret data   data-json/xml
+
+http request types
+-------------------
+GET     - read
+POST    - create
+PUT     - complete updation
+PATCH   - partial updation
+DELETE  - remove
+
+server response status code
+---------------------------
+
+100  - information
+200  - success
+300  - redirection
+400  - client side error
+500  - server side error
+
+
+server creation steps
+----------------------
+
+1- import express
+2- create app using express
+3- port number setting  - 3000
+4- resolve http requests
+
+Nodemon
+--------
+
+If we run server using node, recompilation won't work.
+So we use another server - nodemon.
+
+npm i -g nodemon
+
+express.json()- to convert all request datas from json to js
+.json(data)   - to convert js to json and send the data as response
+.status(statusCode)- to change the response status code as statusCode
+
+TOKEN IN Server
+----------------
+
+JWT TOKEN -json web TOKEN
+install
+       -  npm i jsonwebtoken
+-library  - jsonwebtoken
+-sign()   - method used to generate jwt TOKEN
+-verify() - used to verify json web token 
+
+token verification
+-------------------
+
+middlewares
+-----------
+
+token verification can do using middlewares
+middlewares have the capacity to control server requests
+
+-middleware is a function with three arguments - request,response,next
+-two types of middlewares
+   
+     1.Application Specific Middleware
+           -work before all requests in server
+     2.Router Specific Middleware
+           -can apply to specific requests in Server
+
+how to solve runtime errors in js
+----------------------------------
+
+try-except
+
+try             //works in both cases-error/no error
+   error causing code
+
+catch           //works only whn there is error
+   error solve
+
+
+Mongo DB    -database
+------------   
+
+install mongodb server
+
+shell commands
+---------------
+ 
+CRUD
+
+ - show dbs  - to see database
+ - use (database_name)  - to open a database
+ - show collections     - to see collections inside dbs
+ - db.(collection_name).find()  - to read all data in collection_name
+ - db.(collection_name).findOne({acno:1000}) - to read single data
+ - db.(collection_name).insertOne({"acno":1001,"name":"amal",...}) - create new data
+
+ - db.(collection_name).find({balance:{gt:4000}})  - find using a condition
+ - db.(collection_name).deleteOne({"uname":"anu"})  - delete count will be the o/p . used to delete
+ - db.(collection_name).updateOne({uname:anu},{$set:{uname:anu v}})  - update data
+
+
+ register -insertOne
+ login   -findOne
+ deposit -updateOne
+ withdraw -updateOne
+ transaction history -findOne
+ delete  -deleteOne
+
+ Server Database Integration
+ ----------------------------
+
+ database -27017
+ server   -3000
+
+ mongoose -used for server mdb Integration
+ install - npm i mongoose
+
+ steps
+ ------
+
+ 1.import mongoose
+ 2.state a connection string to integrate
+ 3.define a model for our collection 
+
+ FrontEnd Server Integration
+ -----------------------------
+
+ CORS - Cross Origin Resourse Sharing - library used for frontend server integration(4200-3000)
+
+ steps
+ ------
+ 1.import Cross
+ 2.connection string
+ 
+ 
